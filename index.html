@@ -1,0 +1,632 @@
+<html>
+<head>
+	<title>CensusMap</title>
+
+	<meta charset="UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>  
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="mystyle.css" type="text/css">
+	
+	<script
+        src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin="">
+	</script>
+
+   	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    
+
+	<script src="perifereies.js"></script>
+	<script src="perifer_enot.js"></script>
+	<script src="dhmoi.js"></script>
+
+	<script src="dhmogr_B02_dhmos.js"></script>
+	<script src="dhmogr_B04_dhmos.js"></script>
+	<script src="dhmogr_B06_dhmos.js"></script>
+	<script src="dhmogr_B09_dhmos.js"></script>
+	<script src="dhmogr_B12_dhmos.js"></script>
+	<script src="dhmogr_B13_dhmos.js"></script>
+	<script src="dhmogr_B14_dhmos.js"></script>
+
+	<script src="dhmogr_B02_perifenot.js"></script>
+	<script src="dhmogr_B04_perifenot.js"></script>
+	<script src="dhmogr_B06_perifenot.js"></script>
+	<script src="dhmogr_B09_perifenot.js"></script>
+	<script src="dhmogr_B12_perifenot.js"></script>
+	<script src="dhmogr_B13_perifenot.js"></script>
+	<script src="dhmogr_B14_perifenot.js"></script>
+
+	<script src="dhmogr_B02_perifereia.js"></script>
+	<script src="dhmogr_B04_perifereia.js"></script>
+	<script src="dhmogr_B06_perifereia.js"></script>
+	<script src="dhmogr_B09_perifereia.js"></script>
+	<script src="dhmogr_B12_perifereia.js"></script>
+	<script src="dhmogr_B13_perifereia.js"></script>
+	<script src="dhmogr_B14_perifereia.js"></script>
+
+
+	<script src="oikon_B02_dhmos.js"></script>
+	<script src="oikon_B04_dhmos.js"></script>
+	<script src="oikon_B07_dhmos.js"></script>
+	<script src="oikon_B10_dhmos.js"></script>
+	<script src="oikon_B12_dhmos.js"></script>
+	<script src="oikon_B15_dhmos.js"></script>
+	<script src="oikon_B17_dhmos.js"></script>
+	<script src="oikon_B19_dhmos.js"></script>
+	<script src="oikon_B20_dhmos.js"></script>
+	<script src="oikon_B23_dhmos.js"></script>
+
+	<script src="oikon_B02_perifenot.js"></script>
+	<script src="oikon_B04_perifenot.js"></script>
+	<script src="oikon_B07_perifenot.js"></script>
+	<script src="oikon_B10_perifenot.js"></script>
+	<script src="oikon_B12_perifenot.js"></script>
+	<script src="oikon_B15_perifenot.js"></script>
+	<script src="oikon_B17_perifenot.js"></script>
+	<script src="oikon_B19_perifenot.js"></script>
+	<script src="oikon_B20_perifenot.js"></script>
+	<script src="oikon_B23_perifenot.js"></script>
+
+	<script src="oikon_B02_perifereia.js"></script>
+	<script src="oikon_B04_perifereia.js"></script>
+	<script src="oikon_B07_perifereia.js"></script>
+	<script src="oikon_B10_perifereia.js"></script>
+	<script src="oikon_B12_perifereia.js"></script>
+	<script src="oikon_B15_perifereia.js"></script>
+	<script src="oikon_B17_perifereia.js"></script>
+	<script src="oikon_B19_perifereia.js"></script>
+	<script src="oikon_B20_perifereia.js"></script>
+	<script src="oikon_B23_perifereia.js"></script>
+
+
+	<script src="metan_B03_dhmos.js"></script>
+	<script src="metan_B06_dhmos.js"></script>
+	<script src="metan_B08_dhmos.js"></script>
+
+	<script src="metan_B03_perifenot.js"></script>
+	<script src="metan_B06_perifenot.js"></script>
+	<script src="metan_B08_perifenot.js"></script>
+
+	<script src="metan_B03_perifereia.js"></script>
+	<script src="metan_B06_perifereia.js"></script>
+	<script src="metan_B08_perifereia.js"></script>
+
+
+	<script src="kat_B02_dhmos.js"></script>
+	<script src="kat_B06_dhmos.js"></script>
+	<script src="kat_B08_dhmos.js"></script>
+	<script src="kat_B10_dhmos.js"></script>
+	<script src="kat_B12_dhmos.js"></script>
+	<script src="kat_B14_dhmos.js"></script>
+	<script src="kat_B15_dhmos.js"></script>
+	<script src="kat_B16_dhmos.js"></script>
+	<script src="kat_B17_dhmos.js"></script>
+	<script src="kat_B18_dhmos.js"></script>
+	<script src="kat_B19_dhmos.js"></script>
+	<script src="kat_B21_dhmos.js"></script>
+	<script src="kat_B22_dhmos.js"></script>
+	<script src="kat_B24_dhmos.js"></script>
+	<script src="kat_B26_dhmos.js"></script>
+	<script src="kat_B29_dhmos.js"></script>
+	<script src="kat_B31_dhmos.js"></script>
+	<script src="kat_B32_dhmos.js"></script>
+	<script src="kat_B34_dhmos.js"></script>
+	<script src="kat_B36_dhmos.js"></script>
+	<script src="kat_B38_dhmos.js"></script>
+	<script src="kat_B40_dhmos.js"></script>
+	<script src="kat_B42_dhmos.js"></script>
+	<script src="kat_B44_dhmos.js"></script>
+
+	<script src="kat_B02_perifenot.js"></script>
+	<script src="kat_B06_perifenot.js"></script>
+	<script src="kat_B08_perifenot.js"></script>
+	<script src="kat_B10_perifenot.js"></script>
+	<script src="kat_B12_perifenot.js"></script>
+	<script src="kat_B14_perifenot.js"></script>
+	<script src="kat_B15_perifenot.js"></script>
+	<script src="kat_B16_perifenot.js"></script>
+	<script src="kat_B17_perifenot.js"></script>
+	<script src="kat_B18_perifenot.js"></script>
+	<script src="kat_B19_perifenot.js"></script>
+	<script src="kat_B21_perifenot.js"></script>
+	<script src="kat_B22_perifenot.js"></script>
+	<script src="kat_B24_perifenot.js"></script>
+	<script src="kat_B26_perifenot.js"></script>
+	<script src="kat_B29_perifenot.js"></script>
+	<script src="kat_B31_perifenot.js"></script>
+	<script src="kat_B32_perifenot.js"></script>
+	<script src="kat_B34_perifenot.js"></script>
+	<script src="kat_B36_perifenot.js"></script>
+	<script src="kat_B38_perifenot.js"></script>
+	<script src="kat_B40_perifenot.js"></script>
+	<script src="kat_B42_perifenot.js"></script>
+	<script src="kat_B44_perifenot.js"></script>
+
+	<script src="kat_B02_perifereia.js"></script>
+	<script src="kat_B06_perifereia.js"></script>
+	<script src="kat_B08_perifereia.js"></script>
+	<script src="kat_B10_perifereia.js"></script>
+	<script src="kat_B12_perifereia.js"></script>
+	<script src="kat_B14_perifereia.js"></script>
+	<script src="kat_B15_perifereia.js"></script>
+	<script src="kat_B16_perifereia.js"></script>
+	<script src="kat_B17_perifereia.js"></script>
+	<script src="kat_B18_perifereia.js"></script>
+	<script src="kat_B19_perifereia.js"></script>
+	<script src="kat_B21_perifereia.js"></script>
+	<script src="kat_B22_perifereia.js"></script>
+	<script src="kat_B24_perifereia.js"></script>
+	<script src="kat_B26_perifereia.js"></script>
+	<script src="kat_B29_perifereia.js"></script>
+	<script src="kat_B31_perifereia.js"></script>
+	<script src="kat_B32_perifereia.js"></script>
+	<script src="kat_B34_perifereia.js"></script>
+	<script src="kat_B36_perifereia.js"></script>
+	<script src="kat_B38_perifereia.js"></script>
+	<script src="kat_B40_perifereia.js"></script>
+	<script src="kat_B42_perifereia.js"></script>
+	<script src="kat_B44_perifereia.js"></script>
+
+</head>
+
+<body>
+
+<div id="main" name="main">
+	
+	<div id="sidemenu" name="sidemenu">
+
+		<div id="accordion">
+			  
+			<!-- ==================================================================== -->
+			<img src="census.png" alt="censusmap" width="100%" height="20%" float="left"> 
+			<div id="1"   class="acc1"  >
+			   Η παρούσα εφαρμογή αποτελεί μια χαρτογραφική απεικόνιση απογραφικών δεδομένων πληθυσμού και κοινωνικών συνθηκών με χρήση αναλογικών συμβόλων, όπως αυτά καταγράφονται από τις «Γενικές Απογραφές Κτιρίων και Πληθυσμού – Κατοικιών 2011», της Ελληνικής Στατιστικής Αρχής (ΕΛΣΤΑΤ). <br><br>
+			   Οι κατηγορίες των δεδομένων είναι τα "Δημογραφικά Χαρακτηριστικά", τα "Οικονομικά Χαρακτηριστικά", η "Μετανάστευση" και τα "Χαρακτηριστικά κατοικιών-νοικοκυριών". <br><br>
+			   Η απεικόνιση πραγματοποιείται σε τρία διαφορετικά επίπεδα διοικητικών υποδιαιρέσεων (Περιφέρειας, Περιφερειακής Ενότητας και Δήμου). <br><br>
+			   <a href="https://www.statistics.gr/el/statistics/pop" target="_blank">ΕΛΣΤΑΤ - Στατιστικές (Πληθυσμός & Κοινωνικές Συνθήκες) (2011)</a> <br><br><br>
+			   --    --    --    --    --    --    --    --    --    --    --    --<br><br><br>
+			   <i><b>ΕΘΝΙΚΟ ΜΕΤΣΟΒΙΟ ΠΟΛΥΤΕΧΝΕΙΟ</b><br>
+				ΣΧΟΛΗ ΑΓΡΟΝΟΜΩΝ ΚΑΙ ΤΟΠΟΓΡΑΦΩΝ ΜΗΧΑΝΙΚΩΝ – ΜΗΧΑΝΙΚΩΝ ΓΕΩΠΛΗΡΟΦΟΡΙΚΗΣ <br><br>
+				<b>ΔΙΠΛΩΜΑΤΙΚΗ ΕΡΓΑΣΙΑ</b><br>
+				CENSUSMAP: ΔΙΑΔΙΚΤΥΑΚΗ ΔΙΑΔΡΑΣΤΙΚΗ ΧΑΡΤΟΓΡΑΦΙΚΗ ΕΦΑΡΜΟΓΗ ΓΙΑ ΤΗΝ ΑΠΕΙΚΟΝΙΣΗ ΑΠΟΓΡΑΦΙΚΩΝ ΔΕΔΟΜΕΝΩΝ ΠΛΗΘΥΣΜΟΥ ΚΑΙ ΚΟΙΝΩΝΙΚΩΝ ΣΥΝΘΗΚΩΝ <br><br>
+				ΣΙΑΧΟΣ ΠΑΝΑΓΙΩΤΗΣ <br>
+				ΑΘΗΝΑ, 2021
+				</i>
+			</div>
+			  
+			<!-- ==================================================================== -->
+			<h3>Δημογραφικά Χαρακτηριστικά</h3>
+			<div   id="2"   class="acc"  >
+				<p style="font-size:70%;">
+				<a href="https://www.statistics.gr/el/statistics/-/publication/SAM03/-" target="_blank">ΕΛΣΤΑΤ - Πίνακες Δημογραφικών Χαρακτηριστικών (2011)</a>
+				</p>
+				<div class="sel">
+					<button onclick="myFunction1(0)" class="btn" id="btn1">Β02 - Μόνιμος πληθυσμός κατά τόπο γέννησης</button>
+					<button onclick="myFunction1(1)" class="btn" id="btn1">Β04 - Μόνιμος Πληθυσμός κατά φύλο και οικογενειακή κατάσταση</button>
+					<button onclick="myFunction1(2)" class="btn" id="btn1">Β06 - Μόνιμος Πληθυσμός κατά φύλο και επίπεδο εκπαίδευσης</button>
+					<button onclick="myFunction1(3)" class="btn" id="btn1">Β09 - Μόνιμος Πληθυσμός κατά ομάδες υπηκοοτήτων</button>
+					<button onclick="myFunction1(4)" class="btn" id="btn1">Β12 - Γυναίκες ηλικίας 10 ετών και άνω κατά αριθμό παιδιών</button>
+					<button onclick="myFunction1(5)" class="btn" id="btn1">Β13 - Γυναίκες ηλικίας 10 ετών και άνω, κατά ηλικία του μικρότερου παιδιού</button>
+					<button onclick="myFunction1(6)" class="btn" id="btn1">Β14 - Γυναίκες ηλικίας 10 ετών και άνω, κατά ηλικία του μεγαλύτερου παιδιού</button>
+				</div>
+			</div>
+		  			  
+			<!-- ==================================================================== -->
+			<h3>Οικονομικά Χαρακτηριστικά </h3>
+			<div   id="3"   class="acc" >
+			    <p style="font-size:70%;">
+				<a href="https://www.statistics.gr/el/statistics/-/publication/SAM04/-" target="_blank">ΕΛΣΤΑΤ - Πίνακες Οικονομικών Χαρακτηριστικών (2011)</a>
+				</p>
+				<div class="sel">
+					<button onclick="myFunction1(7)" class="btn" id="btn2">Β02 - Μόνιμος Πληθυσμός, κατά φύλο και κατάσταση ασχολίας</button>
+					<button onclick="myFunction1(8)" class="btn" id="btn2">Β04 - Απασχολούμενοι κατά κλάδο οικονομικής δραστηριότητας</button>
+					<button onclick="myFunction1(9)" class="btn" id="btn2">Β07 - Απασχολούμενοι κατά επάγγελμα</button>
+					<button onclick="myFunction1(10)" class="btn" id="btn2">Β10 - Απασχολούμενοι κατά επίπεδο εκπαίδευσης</button>
+					<button onclick="myFunction1(11)" class="btn" id="btn2">Β12 - Οικονομικά ενεργός και μη ενεργός πληθυσμός κατά ομάδες υπηκοοτήτων</button>
+					<button onclick="myFunction1(12)" class="btn" id="btn2">Β15 - Οικονομικά ενεργός και μη ενεργός πληθυσμός κατά επίπεδο εκπαίδευσης</button>
+					<button onclick="myFunction1(13)" class="btn" id="btn2">Β17 - Άνεργοι κατά επίπεδο εκπαίδευσης</button>
+					<button onclick="myFunction1(14)" class="btn" id="btn2">Β19 - Απασχολούμενοι κατά τόπο εργασίας</button>
+					<button onclick="myFunction1(15)" class="btn" id="btn2">Β20 - Απασχολούμενοι κατά ώρες απασχόλησης, ώρες απασχόλησης την προηγούμενη εβδομάδα και λόγος που εργάστηκε λιγότερες ώρες</button>
+					<button onclick="myFunction1(16)" class="btn" id="btn2">Β23 - Οικονομικά ενεργός και μη ενεργός πληθυσμός, απασχολούμενοι κατά τομέα οικονομικής δραστηριότητας, άνεργοι</button>
+				</div>
+ 			</div>
+			  
+			<!-- ==================================================================== -->
+			<h3>Μετανάστευση</h3>
+			<div id="4"   class="acc">
+				<p style="font-size:70%;">
+				<a href="https://www.statistics.gr/el/statistics/-/publication/SAM07/-" target="_blank">ΕΛΣΤΑΤ - Πίνακες Μετανάστευσης (2011)</a>
+				</p>
+				<div class="sel">
+					<button onclick="myFunction1(17)" class="btn" id="btn3">Β03 - Εγκατασταθέντες από το εξωτερικό κατά την τελευταία πενταετία πριν την απογραφή 2011</button>
+					<button onclick="myFunction1(18)" class="btn" id="btn3">Β06 - Μόνιμος πληθυσμός ηλικίας ενός έτους και άνω, κατά τόπο διαμονής ένα έτος πριν την απογραφή</button>
+					<button onclick="myFunction1(19)" class="btn" id="btn3">Β08 - Μόνιμος πληθυσμός ηλικίας 5 ετών και άνω, κατά τόπο διαμονής πέντε έτη πριν την απογραφή</button>
+				</div>
+			</div>
+				
+			<h3>Χαρακτηριστικά Κατοικιών - Νοικοκυριών</h3>
+			<div   id="5"   class="acc">
+			    <p style="font-size:70%;">
+				<a href="https://www.statistics.gr/el/statistics/-/publication/SAM05/-" target="_blank">ΕΛΣΤΑΤ - Πίνακες Χαρακτηριστικών Κατοικιών - Νοικοκυριών (2011)</a>
+				</p>
+				<div class="sel">
+					<button onclick="myFunction1(20)" class="btn" id="btn4">Β02 - Κατοικούμενες κανονικές κατοικίες κατά πυκνότητα κατοικήσεως και τύπο κυριότητας</button>
+					<button onclick="myFunction1(21)" class="btn" id="btn4">Β06 - Κανονικές κατοικίες κατά διαθεσιμότητα λουτρού</button>
+					<button onclick="myFunction1(22)" class="btn" id="btn4">Β08 - Κανονικές κατοικίες κατά διαθεσιμότητα τουαλέτας ή WC</button>
+					<button onclick="myFunction1(23)" class="btn" id="btn4">Β10 - Κανονικές κατοικίες κατά κατάσταση κατοικίας (κατοικούμενες, κενές) και διαθεσιμότητα κουζίνας</button>
+					<button onclick="myFunction1(24)" class="btn" id="btn4">Β12 - Κανονικές κατοικίες κατά διαθεσιμότητα θέρμανσης</button>
+					<button onclick="myFunction1(25)" class="btn" id="btn4">Β14 - Κανονικές κατοικίες κατά τύπο κτιρίου</button>
+					<button onclick="myFunction1(26)" class="btn" id="btn4">Β15 - Κανονικές κατοικίες κατά περίοδο κατασκευής</button>
+					<button onclick="myFunction1(27)" class="btn" id="btn4">Β16 - Κανονικές κατοικίες κατά αριθμό δωματίων</button>
+					<button onclick="myFunction1(28)" class="btn" id="btn4">Β17 - Κανονικές κατοικίες κατά επιφάνεια</button>
+					<button onclick="myFunction1(29)" class="btn" id="btn4">Β18 - Kανονικές κατοικίες κατά κατάσταση κατοικίας</button>
+					<button onclick="myFunction1(30)" class="btn" id="btn4">Β19 - Nοικοκυριά και μέλη αυτών κατά μέγεθος νοικοκυριού</button>
+					<button onclick="myFunction1(31)" class="btn" id="btn4">Β21 - Πυρηνικές οικογένειες, μέλη πυρηνικών οικογενειών και αριθμός παιδιών κατά τύπο πυρηνικής οικογένειας</button>
+					<button onclick="myFunction1(32)" class="btn" id="btn4">Β22 - Πυρηνικές οικογένειες κατά αριθμό παιδιών</button>
+					<button onclick="myFunction1(33)" class="btn" id="btn4">Β24 - Ιδιωτικά νοικοκυριά κατά τύπο και μέγεθος και κατά τύπο πυρηνικής οικογένειας</button>
+					<button onclick="myFunction1(34)" class="btn" id="btn4">Β26 - Πυρηνικές οικογένειες κατά αριθμό απασχολούμενων μελών</button>
+					<button onclick="myFunction1(35)" class="btn" id="btn4">Β29 - Kανονικές κατοικίες κατά είδος μόνωσης</button>
+					<button onclick="myFunction1(36)" class="btn" id="btn4">Β31 - Νοικοκυριά και μέλη αυτών κατά κύρια χρησιμοποιούμενη πηγή ενέργειας για μαγείρεμα</button>
+					<button onclick="myFunction1(37)" class="btn" id="btn4">Β32 - Νοικοκυριά και μέλη αυτών κατά κύρια χρησιμοποιούμενη πηγή ενέργειας για θέρμανση</button>
+					<button onclick="myFunction1(38)" class="btn" id="btn4">Β34 - Νοικοκυριά και μέλη αυτών κατά κύρια χρησιμοποιούμενη πηγή ενέργειας για ζεστό νερό</button>
+					<button onclick="myFunction1(39)" class="btn" id="btn4">Β36 - Νοικοκυριά κατά αριθμό αυτοκινήτων που έχουν στη διάθεσή τους</button>
+					<button onclick="myFunction1(40)" class="btn" id="btn4">Β38 - Νοικοκυριά κατά αριθμό θέσεων σταθμευσης που έχουν στη διάθεσή τους</button>
+					<button onclick="myFunction1(41)" class="btn" id="btn4">Β40 - Νοικοκυριά κατά μέγεθος αυτών και αριθμό αυτοκινήτων</button>
+					<button onclick="myFunction1(42)" class="btn" id="btn4">Β42 - Νοικοκυριά κατά αριθμό αυτοκινήτων και τύπο κυριότητας της κατοικίας που διαμένουν</button>
+					<button onclick="myFunction1(43)" class="btn" id="btn4">Β44 - Νοικοκυριά ανάλογα με την δυνατότητα πρόσβασης στο διαδίκτυο</button>
+				</div>
+ 			</div>
+				
+		</div>
+
+	</div>
+		
+	<div id="map" name="map">
+			<select id="select" onchange="myFunction();">
+				<option value="default">Επιλέξτε ένα στοιχείο από τη στήλη αριστερά</option>
+			</select>		
+		
+		<div id="btns">
+			<button onclick="myFunction2(0)" class="btn2"><span>ΠΕΡΙΦΕΡΕΙΑ</span></button>
+			<button onclick="myFunction2(1)" class="btn2"><span>ΠΕΡΙΦΕΡΕΙΑΚΗ ΕΝΟΤΗΤΑ</span></button>
+			<button onclick="myFunction2(2)" class="btn2"><span>ΔΗΜΟΣ</span></button>
+		</div>
+
+		<div id="bar">
+		<div id="number">Symbol Size 		
+			<div class="container">
+				<input type="range" onchange="myFunction2(s)" min="0" max="8" value="4" id="slider">
+			</div>
+		</div>
+		<div id="min">min</div>
+		<div id="max">max</div>
+		</div>
+
+	</div>
+		
+</div>
+
+<script>
+
+var slider = document.getElementById("slider");
+var number = document.getElementById("number");
+var symsize = 1;
+
+slider.oninput = function() 
+{
+  if (slider.value == 0) {symsize = 5/20;} 
+  else if (slider.value == 1) {symsize = 10/20;}
+  else if (slider.value == 2) {symsize = 14/20;}
+  else if (slider.value == 3) {symsize = 17/20;}
+  else if (slider.value == 4) {symsize = 1;}
+  else if (slider.value == 5) {symsize = 3/2;}
+  else if (slider.value == 6) {symsize = 2;}
+  else if (slider.value == 7) {symsize = 3;}
+  else if (slider.value == 8) {symsize = 4;}
+}
+
+$(function() 
+{
+	$( "#accordion" ).accordion();
+});
+
+var map = L.map('map', {zoomSnap: 0.1}).setView([38.7, 25], 6.7);
+
+var perif = L.geoJson(perifereies);
+var perif_en = L.geoJson(perifer_enot);
+var oria = L.geoJson();	
+var centroid = L.geoJson();
+
+var legend = L.control();
+var info = L.control({position: 'bottomright'});
+
+var dhm = [dhm_B02_dhm, dhm_B04_dhm, dhm_B06_dhm, dhm_B09_dhm, dhm_B12_dhm, dhm_B13_dhm, dhm_B14_dhm, oik_B02_dhm, oik_B04_dhm, oik_B07_dhm, oik_B10_dhm, oik_B12_dhm, oik_B15_dhm, oik_B17_dhm, oik_B19_dhm, oik_B20_dhm, oik_B23_dhm, met_B03_dhm, met_B06_dhm, met_B08_dhm, kat_B02_dhm, kat_B06_dhm, kat_B08_dhm, kat_B10_dhm, kat_B12_dhm, kat_B14_dhm, kat_B15_dhm, kat_B16_dhm, kat_B17_dhm, kat_B18_dhm, kat_B19_dhm, kat_B21_dhm, kat_B22_dhm, kat_B24_dhm, kat_B26_dhm, kat_B29_dhm, kat_B31_dhm, kat_B32_dhm, kat_B34_dhm, kat_B36_dhm, kat_B38_dhm, kat_B40_dhm, kat_B42_dhm, kat_B44_dhm];
+var peren = [dhm_B02_peren, dhm_B04_peren, dhm_B06_peren, dhm_B09_peren, dhm_B12_peren, dhm_B13_peren, dhm_B14_peren, oik_B02_peren, oik_B04_peren, oik_B07_peren, oik_B10_peren, oik_B12_peren, oik_B15_peren, oik_B17_peren, oik_B19_peren, oik_B20_peren, oik_B23_peren, met_B03_peren, met_B06_peren, met_B08_peren, kat_B02_peren, kat_B06_peren, kat_B08_peren, kat_B10_peren, kat_B12_peren, kat_B14_peren, kat_B15_peren, kat_B16_peren, kat_B17_peren, kat_B18_peren, kat_B19_peren, kat_B21_peren, kat_B22_peren, kat_B24_peren, kat_B26_peren, kat_B29_peren, kat_B31_peren, kat_B32_peren, kat_B34_peren, kat_B36_peren, kat_B38_peren, kat_B40_peren, kat_B42_peren, kat_B44_peren];
+var perif = [dhm_B02_perif, dhm_B04_perif, dhm_B06_perif, dhm_B09_perif, dhm_B12_perif, dhm_B13_perif, dhm_B14_perif, oik_B02_perif, oik_B04_perif, oik_B07_perif, oik_B10_perif, oik_B12_perif, oik_B15_perif, oik_B17_perif, oik_B19_perif, oik_B20_perif, oik_B23_perif, met_B03_perif, met_B06_perif, met_B08_perif, kat_B02_perif, kat_B06_perif, kat_B08_perif, kat_B10_perif, kat_B12_perif, kat_B14_perif, kat_B15_perif, kat_B16_perif, kat_B17_perif, kat_B18_perif, kat_B19_perif, kat_B21_perif, kat_B22_perif, kat_B24_perif, kat_B26_perif, kat_B29_perif, kat_B31_perif, kat_B32_perif, kat_B34_perif, kat_B36_perif, kat_B38_perif, kat_B40_perif, kat_B42_perif, kat_B44_perif];
+var d = [perifereies, perifer_enot, dhmoi];
+var n = [perif, peren, dhm];
+var u = ["PERIFEREIA", "PERIF_ENOT", "DIMOS"];
+var v = ["ΠΕΡΙΦΕΡΕΙΑ", "ΠΕΡΙΦΕΡΕΙΑΚΗ ΕΝΟΤΗΤΑ", "ΔΗΜΟΣ"];
+var r;
+var y;
+var s;
+var q;
+
+var lala;
+var kenoArray = [];
+var maxArray;
+var minArray;
+
+var symbol1;
+var symbol2;
+var symbol3;
+var symbol = [];
+var sym = [sym1, sym2, sym3];
+var sym1;
+var sym2;
+var sym3;
+
+	function myFunction1(j) {
+        oria.remove();
+		centroid.remove();
+		legend.remove();
+		info.remove();
+		perif.addTo(map);
+		perif_en.addTo(map);
+
+		s = 10;
+		document.getElementById("select").options.length = 0;
+		r=j;
+		
+		var z = Object.keys(dhm[r]["features"][0].properties);
+		const removeValFromZ = [0];
+		const indexSet = new Set(removeValFromZ);
+
+		const x = z.filter((value, i) => !indexSet.has(i));
+
+		var select = document.getElementById("select"),
+			arr = x;
+			
+		for(var i = 0; i < arr.length; i++)
+		{
+			var option = document.createElement("OPTION"),
+				txt = document.createTextNode(arr[i]);
+				option.appendChild(txt);
+				option.setAttribute("value",arr[i]);
+				select.insertBefore(option,select.lastChild);
+		}
+	}
+
+	function myFunction2(k) {
+		s = k;
+		oria.remove();
+		centroid.remove();
+		legend.remove();
+	
+
+		lala = n[s][r]["features"];
+		kenoArray.length = 0;
+
+		for (var i = 0; i < lala.length; i++) 
+		{
+			kenoArray.push(lala[i].properties[y]);
+		}
+
+		maxArray = Math.max.apply(Math, kenoArray);
+		minArray = Math.min.apply(Math, kenoArray);
+
+		symbol = [maxArray*(18/20), maxArray*(8/20), maxArray*(2/20)];
+
+		for (var i = 0; i < symbol.length; i++)
+		{
+			if (symbol[i] > 1000000) {sym[i] = Math.floor (symbol[i] / 1000000) * 1000000;}
+			else if (symbol[i] > 900000) {sym[i] = Math.floor (symbol[i] / 900000) * 900000;}
+			else if (symbol[i] > 800000) {sym[i] = Math.floor (symbol[i] / 800000) * 800000;}
+			else if (symbol[i] > 700000) {sym[i] = Math.floor (symbol[i] / 700000) * 700000;}
+			else if (symbol[i] > 600000) {sym[i] = Math.floor (symbol[i] / 600000) * 600000;}
+			else if (symbol[i] > 500000) {sym[i] = Math.floor (symbol[i] / 500000) * 500000;}
+			else if (symbol[i] > 400000) {sym[i] = Math.floor (symbol[i] / 400000) * 400000;}
+			else if (symbol[i] > 300000) {sym[i] = Math.floor (symbol[i] / 300000) * 300000;}
+			else if (symbol[i] > 200000) {sym[i] = Math.floor (symbol[i] / 200000) * 200000;}
+			else if (symbol[i] > 100000) {sym[i] = Math.floor (symbol[i] / 100000) * 100000;}
+			else if (symbol[i] > 90000) {sym[i] = Math.floor (symbol[i] / 90000) * 90000;}
+			else if (symbol[i] > 80000) {sym[i] = Math.floor (symbol[i] / 80000) * 80000;}
+			else if (symbol[i] > 70000) {sym[i] = Math.floor (symbol[i] / 70000) * 70000;}
+			else if (symbol[i] > 60000) {sym[i] = Math.floor (symbol[i] / 60000) * 60000;}
+			else if (symbol[i] > 50000) {sym[i] = Math.floor (symbol[i] / 50000) * 50000;}
+			else if (symbol[i] > 40000) {sym[i] = Math.floor (symbol[i] / 40000) * 40000;}
+			else if (symbol[i] > 30000) {sym[i] = Math.floor (symbol[i] / 30000) * 30000;}
+			else if (symbol[i] > 20000) {sym[i] = Math.floor (symbol[i] / 20000) * 20000;}
+			else if (symbol[i] > 10000) {sym[i] = Math.floor (symbol[i] / 10000) * 10000;}
+			else if (symbol[i] > 5000) {sym[i] = Math.floor (symbol[i] / 5000) * 5000;}
+			else if (symbol[i] > 1000) {sym[i] = Math.floor (symbol[i] / 1000) * 1000;}
+			else if (symbol[i] > 500) {sym[i] = Math.floor (symbol[i] / 500) * 500;}
+			else if (symbol[i] > 100) {sym[i] = Math.floor (symbol[i] / 100) * 100;}
+			else if (symbol[i] > 50) {sym[i] = Math.floor (symbol[i] / 50) * 50;}
+		}
+
+
+		oria = L.geoJson(d[s], {
+			style: style,
+		 	onEachFeature: onEachFeature
+		}).addTo(map);
+
+		centroid = L.geoJson(n[s][r], {
+            pointToLayer: function(feature, latlng) 
+			{
+				return new L.CircleMarker(latlng, {radius: getradius(s, feature.properties[y], maxArray),
+				fillColor: getColor(r),
+				weight: 0.5,
+				opacity: 1,
+				fillOpacity: 0.7,
+				color: 'white'});
+            },
+			onEachFeature: function (feature, layer) 
+			{
+				var popupContent = '<b>' + v[s] + " " + feature.properties[u[s]] +  '</b><br />' + '<br />' + y + ": " + feature.properties[y]+"</b>  </b> </p>";
+				if (feature.properties && feature.properties.popupContent) {popupContent += feature.properties.popupContent;}
+				layer.bindPopup(popupContent);
+				centroid.addLayer( layer );
+        	}
+        }).addTo(map);
+
+		info.onAdd = function (map) {
+			this._div = L.DomUtil.create('div', 'info');
+			this.update();
+			return this._div;
+		};
+
+		info.update = function (props) {
+			this._div.innerHTML = `<h4>${y}</h4>` +  (props ?
+			'<b>' + v[s] + ' ' + props[u[s]] + '</b>':'');
+		};
+
+		info.addTo(map);
+
+
+		legend = L.control({position: 'bottomleft'});
+
+		legend.onAdd = function (map) 
+		{
+			var div = L.DomUtil.create('div', 'info legend'),
+				grades = [sym[2], sym[1], sym[0]],
+				labels = ['<h4>ΥΠΟΜΝΗΜΑ</h4>'],
+				from, to;
+
+			for (var i = 0; i < grades.length; i++) {
+				from = grades[i];
+				to = grades[i + 1];
+				var h1=getradius(s, from, maxArray);
+				var h2=getradius(s, grades[i+1], maxArray);
+				labels.push(
+					' <i style="background: '+getColor(r)+'; border-radius: 100%; width: '+getradius(s, from, maxArray)*2+'px; height: '+getradius(s, from, maxArray)*2+'px; margin-left: '+(getradius(s, maxArray, maxArray)-getradius(s, from, maxArray))+'px; margin-right: '+(getradius(s, maxArray, maxArray)-getradius(s, from, maxArray))+'px;"></i> ' + `<p>${from}</p>` );
+			}
+			div.innerHTML = labels.join('<br>');
+			return div;
+		};
+		legend.addTo(map);
+		
+	}
+
+	function myFunction() {
+		y = document.getElementById("select").value;
+        oria.remove();
+		myFunction2(s);
+	}
+
+
+    var baselayer1 = L.tileLayer('https://api.mapbox.com/styles/v1/siachospan/ckpr102wk0e2z19pukxa3gmmy/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoic2lhY2hvc3BhbiIsImEiOiJja2wyaWtvZWUwYW1nMzNtbnU3OWpxZHQ5In0.nLEFI5tBJJtRgK-FJbAyKQ', {
+        maxZoom: 13,
+        minZoom: 5,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>  ' +
+            '© <a href="https://www.mapbox.com/">Mapbox</a>'
+    }).addTo(map);
+
+	var baselayer2 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 13,
+        minZoom: 5,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>  ' +
+            '© <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/light-v9'
+    });
+
+	var baselayer3 = L.tileLayer('https://api.mapbox.com/styles/v1/siachospan/ckt60mny32kej17rs7zkxb2rh/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoic2lhY2hvc3BhbiIsImEiOiJja2wyaWtvZWUwYW1nMzNtbnU3OWpxZHQ5In0.nLEFI5tBJJtRgK-FJbAyKQ', {
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>  ' +
+            '© <a href="https://www.mapbox.com/">Mapbox</a>'
+    });
+
+	var baseMaps = {
+    "Basic": baselayer1,
+    "Terrain (Light Gray)": baselayer2,
+	"Satellite": baselayer3
+	};
+
+	L.control.layers(baseMaps).addTo(map);
+
+	perif = L.geoJson(perifereies, {color: 'black', fillOpacity: 0.3, weight: 1}).addTo(map);
+	perif_en = L.geoJson(perifer_enot, {color: 'black', fillOpacity: 0, weight: 0.5, dashArray: '2'}).addTo(map);
+
+	L.control.scale(
+		{
+			maxWidth:200,
+			imperial:false,
+			position:'bottomleft',			
+		}
+	).addTo(map);
+
+	function getColor(d) 
+	{
+		return 	d < 7 ?  '#006666' : 
+				d < 17 ? '#990033' :
+				d < 20 ? '#660066' :
+				d < 44 ? '#cc9900' :
+						'#ffffff';
+	};
+
+	function getradius(d, f, m) 
+	{
+		return 	d == 0 ? ((f/m)**0.57)*(70*symsize) :
+				d == 1 ? ((f/m)**0.57)*(50*symsize) :
+				d == 2 ? ((f/m)**0.57)*(30*symsize) :
+						 ((f/m)**0.57)*10 ;
+	};
+
+	function style(feature) 
+	{
+		return {
+			fillColor: "#cccccc",
+            weight: 0.5,
+            opacity: 0.4,
+            color: 'black',
+            fillOpacity: 0.1
+		};
+	};
+
+	function highlightFeature(e) 
+	{
+		var layer = e.target;
+
+		layer.setStyle({
+			weight: 3,
+			color: '#850',
+			dashArray: '',
+			fillOpacity: 0.5
+		});
+
+		info.update(layer.feature.properties);
+	}
+
+	function resetHighlight(e) 
+	{
+		oria.resetStyle(e.target);
+		info.update();
+	}
+
+	function zoomToFeature(e) 
+	{
+		map.fitBounds(e.target.getBounds());
+	}
+
+
+	function onEachFeature(feature, layer) 
+	{
+		layer.on({
+			mouseover: highlightFeature,
+			mouseout: resetHighlight,
+			click: zoomToFeature
+		});
+	}
+
+	var round = Math.round (11 / 5) * 5 ;
+
+</script>
+</body>
+</html>
